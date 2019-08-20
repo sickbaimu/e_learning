@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/White"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ll_content"
+        android:id="@+id/tv_head"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="25sp"
+        android:textColor="@color/White"
+        android:text="我要发帖"
+        android:gravity="center"
+        android:background="@color/DeepBlue" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:padding="20dp"
+        app:layout_constraintVertical_weight="9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_head"
+        app:layout_constraintBottom_toTopOf="@+id/ll_input"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="25sp"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/DeepBlue"
+                android:text="主题："
+                android:layout_width="wrap_content"
+                android:layout_height="60dp" />
+            <EditText
+                android:hint="theme"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:textSize="25sp"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/DeepBlue"
+            android:text="内容："
+            android:layout_width="wrap_content"
+            android:layout_height="60dp" />
+        <EditText
+            android:minLines="10"
+            android:gravity="top"
+            android:hint="content"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/ll_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="bottom"
+        android:id="@+id/ll_input"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/b_login"
+            android:background="@drawable/shape_corner_blue"
+            android:textSize="20sp"
+            android:textColor="@color/White"
+            android:text="发  布"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.activity.BBS.Post">
+
+    <TextView
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:textColor="@color/DeepBlue"
+        android:textSize="30sp"
+        android:text="发表主题帖"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="@color/DeepBlue"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="主题："
+        android:textColor="@color/DeepBlue"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:lines="1"
+        android:layout_marginTop="5dp"
+        android:id="@+id/editTheme"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_margin="20dp"
+        android:text="内容："
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/DeepBlue"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="5dp"
+        android:maxLength="255"
+        android:id="@+id/editContent"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/buttonPost"
+        android:background="@drawable/shape_corner_blue"
+        android:textSize="25sp"
+        android:textColor="@color/White"
+        android:text="发  表"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
