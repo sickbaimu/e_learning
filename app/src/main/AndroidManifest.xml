@@ -7,11 +7,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name = "android.media.action.IMAGE_CAPTURE" />
-    <uses-permission android:name = "android.permission.CAMERA" />
-    <uses-feature android:name = "android.hardware.camera" />
-    <uses-feature android:name = "android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.media.action.IMAGE_CAPTURE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -22,16 +24,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.Vote.VoteUpload">
-
-
+        <activity android:name=".activity.activity.Exam.OrderExam">
 
         </activity>
+        <activity android:name=".activity.activity.Vote.VoteUpload"></activity>
         <activity android:name=".activity.activity.Vote.VoteRank" />
         <activity android:name=".activity.activity.BBS.Post" />
         <activity android:name=".activity.activity.BBS.Notice" />
         <activity android:name=".activity.activity.Learn.TeacherHome" />
-        <activity android:name=".activity.activity.BBS.AddBBSPage" />
         <activity
             android:name=".activity.activity.BBS.ChildBBSPage"
             android:screenOrientation="portrait" />
@@ -55,7 +55,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.Vote.VoteList"
-            android:screenOrientation="portrait" />
+            />
         <activity
             android:name=".activity.activity.Vote.VotePage"
             android:screenOrientation="portrait" />
@@ -70,7 +70,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -85,6 +84,7 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.cameraalbumtest.fileprovider"

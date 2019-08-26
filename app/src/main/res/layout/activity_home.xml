@@ -762,6 +762,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/buttonOrderExam"
                         android:textSize="22sp"
                         android:background="@drawable/shape_corner_blue"
                         android:textColor="@color/White"
@@ -774,6 +775,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/buttonRandomExam"
                         android:textSize="22sp"
                         android:background="@drawable/shape_corner_blue"
                         android:textColor="@color/White"
@@ -786,6 +788,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/buttonFinalExam"
                         android:textSize="22sp"
                         android:background="@drawable/shape_corner_blue"
                         android:textColor="@color/White"
@@ -798,6 +801,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/buttonMyScore"
                         android:textSize="22sp"
                         android:background="@drawable/shape_corner_blue"
                         android:textColor="@color/White"
@@ -810,6 +814,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <Button
+                        android:id="@+id/buttonCollection"
                         android:textSize="22sp"
                         android:background="@drawable/shape_corner_blue"
                         android:textColor="@color/White"

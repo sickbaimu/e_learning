@@ -56,33 +56,38 @@ public class VoteList extends AppCompatActivity {
         });
         HttpUtil.sendHttpRequest("GetWorkNames", new HttpCallbackListener() {
             @Override
-            public void onFinish(String response) {
-                names = response.split("-");
-                gridView = findViewById(R.id.grid_view);
-                //配置适配器
-                myAdapter = new MyAdapter(getApplicationContext(),names);
-                gridView.setAdapter(myAdapter);
-                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onFinish(final String response) {
+                runOnUiThread(new Runnable() {
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        //设置被点击的View的共享元素过渡名
-                        Intent intent = new Intent(getApplicationContext(),VotePage.class);
-                        LinearLayout linearLayout = (LinearLayout)view;
-                        ImageView imageView = (ImageView)linearLayout.getChildAt(0);
-                        imageView.setTransitionName("shared_elements");
+                    public void run() {
+                        names = response.split("-");
+                        gridView = findViewById(R.id.grid_view);
+                        //配置适配器
+                        myAdapter = new MyAdapter(getApplicationContext(), names);
+                        gridView.setAdapter(myAdapter);
+                        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                //设置被点击的View的共享元素过渡名
+                                Intent intent = new Intent(getApplicationContext(), VotePage.class);
+                                LinearLayout linearLayout = (LinearLayout) view;
+                                ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+                                imageView.setTransitionName("shared_elements");
 
-                        TextView textView = (TextView)linearLayout.getChildAt(1);
-                        intent.putExtra("head",textView.getText().toString());
-                        intent.putExtra("id",ids[position]);
+                                TextView textView = (TextView) linearLayout.getChildAt(1);
+                                intent.putExtra("head", textView.getText().toString());
+                                intent.putExtra("id", ids[position]);
 
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        ((BitmapDrawable)imageView.getDrawable()).getBitmap().compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                        byte[] bytes=baos.toByteArray();
-                        Bundle b = new Bundle();
-                        b.putByteArray("bitmap", bytes);
-                        intent.putExtras(b);
-                        //以"shared_elements"为名的过渡动画打开新的Activity
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(VoteList.this,view,"shared_elements").toBundle());
+                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                ((BitmapDrawable) imageView.getDrawable()).getBitmap().compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                                byte[] bytes = baos.toByteArray();
+                                Bundle b = new Bundle();
+                                b.putByteArray("bitmap", bytes);
+                                intent.putExtras(b);
+                                //以"shared_elements"为名的过渡动画打开新的Activity
+                                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(VoteList.this, view, "shared_elements").toBundle());
+                            }
+                        });
                     }
                 });
             }

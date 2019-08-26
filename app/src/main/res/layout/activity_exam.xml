@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/desk"
+    android:padding="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.activity.Exam.OrderExam">
+    <LinearLayout
+        android:translationZ="50dp"
+        android:padding="20dp"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvHead"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/Black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="考试模式"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvRate"
+            android:layout_margin="10dp"
+            android:textColor="@color/Black"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="12/50"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/Black"
+            android:text="题目"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:text="Question?"
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/Black"
+            android:text="类型"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:text="单选题"
+            android:id="@+id/tvType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/Black"
+            android:text="回答"
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RadioGroup
+            android:id="@+id/singleGroup"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <RadioButton
+                android:text="Answer_A"
+                android:id="@+id/rbSingleSelectorA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Answer_B"
+                android:id="@+id/rbSingleSelectorB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Answer_C"
+                android:id="@+id/rbSingleSelectorC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Answer_D"
+                android:id="@+id/rbSingleSelectorD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <LinearLayout
+            android:id="@+id/complexGroup"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:text="Answer_A"
+                android:id="@+id/cbComplexSelectorA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:text="Answer_B"
+                android:id="@+id/cbComplexSelectorB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:text="Answer_C"
+                android:id="@+id/cbComplexSelectorC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:text="Answer_D"
+                android:id="@+id/cbComplexSelectorD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/fillGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="@color/White"
+            android:text="提交"
+            android:background="@drawable/shape_corner_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:text="正确答案："
+            android:textColor="#ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

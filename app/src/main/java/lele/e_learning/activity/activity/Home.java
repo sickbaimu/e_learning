@@ -17,6 +17,7 @@ import lele.e_learning.R;
 import lele.e_learning.activity.activity.BBS.ChildBBSPage;
 import lele.e_learning.activity.activity.BBS.Notice;
 import lele.e_learning.activity.activity.BBS.Post;
+import lele.e_learning.activity.activity.Exam.OrderExam;
 import lele.e_learning.activity.activity.Learn.MediaLearnList;
 import lele.e_learning.activity.activity.Learn.PhotoLearnList;
 import lele.e_learning.activity.activity.Learn.TextLearnList;
@@ -30,6 +31,7 @@ public class Home extends Activity implements View.OnClickListener {
     LinearLayout module_learn,module_bbs,module_exam,ll_1,ll_2,ll_3;
     LinearLayout linearNotice,linearPost,linearVote;
     Button switch_learn,switch_bbs,switch_exam;
+    Button buttonOrderExam,buttonRandomExam,buttonFinalExam,buttonMyScore,buttonCollection;
     TextView tv_example_text_1,tv_example_text_2,tv_example_text_3;
     TextView tv_example_img_1,tv_example_img_2,tv_example_img_3;
     TextView tv_example_media_1,tv_example_media_2,tv_example_media_3;
@@ -81,6 +83,12 @@ public class Home extends Activity implements View.OnClickListener {
         tvLastPage = findViewById(R.id.tvLastPage);
         tvNowPage = findViewById(R.id.tvNowPage);
 
+        buttonOrderExam = findViewById(R.id.buttonOrderExam);
+        buttonRandomExam = findViewById(R.id.buttonRandomExam);
+        buttonFinalExam = findViewById(R.id.buttonFinalExam);
+        buttonMyScore = findViewById(R.id.buttonMyScore);
+        buttonCollection = findViewById(R.id.buttonCollection);
+
         ll_bbs = new LinearLayout[]{
                 findViewById(R.id.ll_bbs_1),findViewById(R.id.ll_bbs_2),
                 findViewById(R.id.ll_bbs_3),findViewById(R.id.ll_bbs_4),
@@ -116,11 +124,15 @@ public class Home extends Activity implements View.OnClickListener {
         linearPost.setOnClickListener(this);
         linearVote.setOnClickListener(this);
 
-
         tvNextPage.setOnClickListener(this);
         tvLastPage.setOnClickListener(this);
         tvLastPage.setEnabled(false);
 
+        buttonCollection.setOnClickListener(this);
+        buttonMyScore.setOnClickListener(this);
+        buttonOrderExam.setOnClickListener(this);
+        buttonFinalExam.setOnClickListener(this);
+        buttonRandomExam.setOnClickListener(this);
         MODEL = model_learn;
     }
 
@@ -177,6 +189,8 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.linearVote:startActivity(new Intent(getApplicationContext(), VoteList.class));break;
             case R.id.tvNextPage:FreshPage(1);break;
             case R.id.tvLastPage:FreshPage(-1);break;
+            case R.id.buttonOrderExam:Intent intent1 = new Intent(getApplicationContext(),OrderExam.class);intent1.putExtra("type","Order");startActivity(intent1);break;
+            case R.id.buttonRandomExam:Intent intent3 = new Intent(getApplicationContext(),OrderExam.class);intent3.putExtra("type","Random");startActivity(intent3);break;
             default:break;
         }
     }
