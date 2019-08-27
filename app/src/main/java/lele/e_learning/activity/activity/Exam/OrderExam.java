@@ -19,9 +19,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Queue;
 
 import lele.e_learning.R;
+import lele.e_learning.activity.ErrorInfo;
 import lele.e_learning.activity.activity.Learn.TextLearnList;
 import lele.e_learning.activity.entity.Question;
 import lele.e_learning.activity.entity.TextSection;
@@ -34,7 +36,7 @@ import static lele.e_learning.activity.tools.Pack.ShowToast;
 public class OrderExam extends AppCompatActivity {
 
     ArrayList<Question> questions;
-    TextView tvHead,tvQuestion,tvType,tvRate,tvAnswer;
+    TextView tvHead,tvQuestion,tvType,tvRate;
     CheckBox cbComplexSelectorA,cbComplexSelectorB,cbComplexSelectorC,cbComplexSelectorD;
     RadioButton rbSingleSelectorA,rbSingleSelectorB,rbSingleSelectorC,rbSingleSelectorD;
     RadioGroup singleGroup;
@@ -42,19 +44,25 @@ public class OrderExam extends AppCompatActivity {
     LinearLayout complexGroup;
     Button buttonSubmit;
     String answer ="";
-    int page = 0;
+    public int page = 0;
+    Date beginTime,endTime;
+    String model;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
+        beginTime = new Date(System.currentTimeMillis());
         init();
-        String type = getIntent().getStringExtra("type");
-        if(type.equals("Order"))
+        model = getIntent().getStringExtra("type");
+        if(model.equals("Order"))
             tvHead.setText("顺序模式");
-        else
+        else if(model.equals("Random"))
             tvHead.setText("随机模式");
+        else
+            tvHead.setText("考试模式");
 
-        HttpUtil.sendHttpRequest("GetExam?Type="+type, new HttpCallbackListener() {
+
+        HttpUtil.sendHttpRequest("GetExam?Type="+model, new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 questions = new ArrayList<>();
@@ -88,7 +96,6 @@ public class OrderExam extends AppCompatActivity {
         tvQuestion = findViewById(R.id.tvQuestion);
         tvType = findViewById(R.id.tvType);
         tvRate = findViewById(R.id.tvRate);
-        tvAnswer = findViewById(R.id.tvAnswer);
         rbSingleSelectorA = findViewById(R.id.rbSingleSelectorA);
         rbSingleSelectorB = findViewById(R.id.rbSingleSelectorB);
         rbSingleSelectorC = findViewById(R.id.rbSingleSelectorC);
@@ -104,20 +111,24 @@ public class OrderExam extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //若当前不是最后一题
-                if(page+1<questions.size()){
-                    addAnswer();
-                    page++;
-                    ShowQuestion();
-                }else{//若当前是最后一题
-                    addAnswer();
-                    ShowToast(getApplicationContext(),"恭喜您已经完成了所有题目"+answer);
-                }
+                addAnswer();
             }
         });
     }
 
-    void ShowQuestion(){
+    public void ShowQuestion(){
+        if(page+1>questions.size()){
+            endTime = new Date(System.currentTimeMillis());
+            long time = endTime.getTime() - beginTime.getTime();
+            int right = 0;
+            for(int i =0;i<answer.length();i++){
+                if(answer.charAt(i)=='T')
+                    right++;
+            }
+            String point = String.valueOf(right*100/answer.length());
+            ShowToast(getApplicationContext(),"恭喜您已经完成了所有题目\n得分："+point+"分\n用时："+time/1000+"秒");
+            return;
+        }
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -135,10 +146,7 @@ public class OrderExam extends AppCompatActivity {
                         complexGroup.setVisibility(View.GONE);
                         singleGroup.setVisibility(View.VISIBLE);
                         fillGroup.setVisibility(View.GONE);
-                        rbSingleSelectorA.setChecked(false);
-                        rbSingleSelectorB.setChecked(false);
-                        rbSingleSelectorC.setChecked(false);
-                        rbSingleSelectorD.setChecked(false);
+                        singleGroup.clearCheck();
                         rbSingleSelectorA.setText("A. ".concat(question.split("@")[1]));
                         rbSingleSelectorB.setText("B. ".concat(question.split("@")[2]));
                         rbSingleSelectorC.setText("C. ".concat(question.split("@")[3]));
@@ -148,10 +156,6 @@ public class OrderExam extends AppCompatActivity {
                         complexGroup.setVisibility(View.VISIBLE);
                         singleGroup.setVisibility(View.GONE);
                         fillGroup.setVisibility(View.GONE);
-                        cbComplexSelectorA.setChecked(false);
-                        cbComplexSelectorB.setChecked(false);
-                        cbComplexSelectorC.setChecked(false);
-                        cbComplexSelectorD.setChecked(false);
                         cbComplexSelectorA.setText("A. ".concat(question.split("@")[1]));
                         cbComplexSelectorB.setText("B. ".concat(question.split("@")[2]));
                         cbComplexSelectorC.setText("C. ".concat(question.split("@")[3]));
@@ -185,12 +189,20 @@ public class OrderExam extends AppCompatActivity {
                     tempAnswer = "D";
                 else
                     tempAnswer = "?";
-                if (tempAnswer.equals(questions.get(page).getAnswer()))
+                if (tempAnswer.equals(questions.get(page).getAnswer())){
                     answer += "T";
-                else
-                {
-                    tvAnswer.setText("正确答案：".concat(questions.get(page).getAnswer()));
+                    page++;
+                    ShowQuestion();
+                }
+                else {
                     answer += "F";
+                    if(model.equals("Final"))
+                        break;
+                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("question", questions.get(page));
+                    myDialogFragment.setArguments(bundle);
+                    myDialogFragment.show(getFragmentManager(), "Dialog");
                 }
                 break;
             case "Check":
@@ -205,21 +217,38 @@ public class OrderExam extends AppCompatActivity {
                     tempAnswer += "D";
                 else
                     tempAnswer += "??";
-                if (tempAnswer.equals(questions.get(page).getAnswer()))
+                if (tempAnswer.equals(questions.get(page).getAnswer())) {
                     answer += "T";
-                else
-                {
+                    page++;
+                    ShowQuestion();
+                }
+                else {
                     answer += "F";
-                    tvAnswer.setText("正确答案：".concat(questions.get(page).getAnswer()));
+                    if(model.equals("Final"))
+                        break;
+                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("question", questions.get(page));
+                    myDialogFragment.setArguments(bundle);
+                    myDialogFragment.show(getFragmentManager(), "Dialog");
                 }
                 break;
             case "Fill":
-                if (fillGroup.getText().toString().equals(questions.get(page).getAnswer()))
+                if (fillGroup.getText().toString().equals(questions.get(page).getAnswer())){
                     answer += "T";
+                    page++;
+                    ShowQuestion();
+                }
                 else
                 {
                     answer += "F";
-                    tvAnswer.setText("正确答案：".concat(questions.get(page).getAnswer()));
+                    if(model.equals("Final"))
+                        break;
+                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("question", questions.get(page));
+                    myDialogFragment.setArguments(bundle);
+                    myDialogFragment.show(getFragmentManager(), "Dialog");
                 }
                 break;
             default:

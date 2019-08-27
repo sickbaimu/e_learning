@@ -191,6 +191,8 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.tvLastPage:FreshPage(-1);break;
             case R.id.buttonOrderExam:Intent intent1 = new Intent(getApplicationContext(),OrderExam.class);intent1.putExtra("type","Order");startActivity(intent1);break;
             case R.id.buttonRandomExam:Intent intent3 = new Intent(getApplicationContext(),OrderExam.class);intent3.putExtra("type","Random");startActivity(intent3);break;
+            case R.id.buttonFinalExam:Intent intent4 = new Intent(getApplicationContext(),OrderExam.class);intent4.putExtra("type","Final");startActivity(intent4);break;
+
             default:break;
         }
     }
