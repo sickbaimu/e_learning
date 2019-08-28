@@ -24,10 +24,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.Exam.OrderExam">
-
-        </activity>
-        <activity android:name=".activity.activity.Vote.VoteUpload"></activity>
+        <activity android:name=".activity.activity.Exam.ExamResult"></activity>
+        <activity android:name=".activity.activity.Exam.QuestionCollection" />
+        <activity android:name=".activity.activity.Exam.Exam" />
+        <activity android:name=".activity.activity.Vote.VoteUpload" />
         <activity android:name=".activity.activity.Vote.VoteRank" />
         <activity android:name=".activity.activity.BBS.Post" />
         <activity android:name=".activity.activity.BBS.Notice" />
@@ -53,9 +53,7 @@
         <activity
             android:name=".activity.activity.Learn.MediaLearnPage"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.activity.Vote.VoteList"
-            />
+        <activity android:name=".activity.activity.Vote.VoteList" />
         <activity
             android:name=".activity.activity.Vote.VotePage"
             android:screenOrientation="portrait" />
@@ -70,6 +68,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>

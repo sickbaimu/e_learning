@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/White"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view"
+        android:id="@+id/tv_head"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="18sp"
+        android:textColor="@color/White"
+        android:text="我的题目收藏"
+        android:gravity="center_vertical"
+        android:background="@color/DeepBlue" />
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintVertical_weight="9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_head"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="top"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+</android.support.constraint.ConstraintLayout>

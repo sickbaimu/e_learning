@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.activity.Exam.OrderExam">
+    tools:context=".activity.activity.Exam.Exam">
     <LinearLayout
         android:translationZ="50dp"
         android:padding="20dp"
