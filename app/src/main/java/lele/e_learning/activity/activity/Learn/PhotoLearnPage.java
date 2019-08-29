@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import lele.e_learning.R;
+import lele.e_learning.activity.fragment.NoteFragment;
 import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
@@ -24,6 +27,7 @@ public class PhotoLearnPage extends AppCompatActivity {
 
     private static ImageView img;
     private TextView head,text;
+    Button buttonNote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,19 @@ public class PhotoLearnPage extends AppCompatActivity {
             img = findViewById(R.id.img);
             text = findViewById(R.id.text);
             head = findViewById(R.id.head);
+            buttonNote = findViewById(R.id.buttonNote);
+            buttonNote.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    NoteFragment myDialogFragment = new NoteFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("type", "photo");
+                    bundle.putString("title",getIntent().getStringExtra("head"));
+                    myDialogFragment.setArguments(bundle);
+                    myDialogFragment.show(getFragmentManager(), "Dialog");
+                }
+            });
+
             Intent intent = getIntent();
             int position = intent.getIntExtra("position",0);
             //img.setImageResource(PhotoLearnList.getIcon()[position]);

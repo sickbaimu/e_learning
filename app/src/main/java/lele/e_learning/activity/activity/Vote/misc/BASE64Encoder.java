@@ -74,7 +74,7 @@ public class BASE64Encoder extends CharacterEncoder
 
 	/**
 	 * encodeAtom - Take three bytes of input and encode it as 4 printable
-	 * characters. Note that if the length in len is less than three is encodes
+	 * characters. NoteFragment that if the length in len is less than three is encodes
 	 * either one or two '=' signs to indicate padding characters.
 	 */
 	protected void encodeAtom(OutputStream outStream, byte data[], int offset,

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <TextView
         android:id="@+id/head"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:gravity="center"
         android:textColor="@color/White"
         android:text="标题"
@@ -28,5 +28,12 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_gravity="end"
+        android:layout_margin="20dp"
+        android:id="@+id/buttonNote"
+        android:background="@drawable/img_note"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
 
 </LinearLayout>

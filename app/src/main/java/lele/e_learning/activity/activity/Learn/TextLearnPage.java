@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import lele.e_learning.R;
+import lele.e_learning.activity.fragment.NoteFragment;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
 import lele.e_learning.activity.tools.Pack;
@@ -23,6 +24,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
     Button b_last_page,b_next_page,b_back;
     String chapter_id,section_order;
     int chapter_size = -1;
+    Button buttonNote;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         tv_section = findViewById(R.id.tv_section);
         b_last_page = findViewById(R.id.b_last_page);
         b_next_page = findViewById(R.id.b_next_page);
+        buttonNote = findViewById(R.id.buttonNote);
         b_back = findViewById(R.id.b_back);
         chapter_id = getIntent().getStringExtra("chapter_id");
         section_order = getIntent().getStringExtra("section_order");
@@ -73,6 +76,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         b_last_page.setOnClickListener(this);
         b_next_page.setOnClickListener(this);
         b_back.setOnClickListener(this);
+        buttonNote.setOnClickListener(this);
     }
 
     public void onClick(View v){
@@ -105,6 +109,14 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
                 overridePendingTransition(0,0);
                 finish();
                 break;
+                case R.id.buttonNote:
+                    NoteFragment myDialogFragment = new NoteFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("type", "text");
+                    bundle.putString("title",tv_section.getText().toString().split(" ")[1]);
+                    myDialogFragment.setArguments(bundle);
+                    myDialogFragment.show(getFragmentManager(), "Dialog");
+                    break;
             default:break;
         }
     }

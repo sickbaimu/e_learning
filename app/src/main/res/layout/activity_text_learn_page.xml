@@ -83,8 +83,15 @@
                         android:layout_marginBottom="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
+                    <Button
+                        android:layout_gravity="end"
+                        android:id="@+id/buttonNote"
+                        android:background="@drawable/img_note"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp" />
                 </LinearLayout>
             </ScrollView>
+
             <LinearLayout
                 android:layout_weight="40"
                 android:layout_marginTop="15dp"

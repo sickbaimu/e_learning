@@ -20,12 +20,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import lele.e_learning.R;
-import lele.e_learning.activity.fragment.ErrorInfo;
+import lele.e_learning.activity.fragment.ErrorAnswerFragment;
 import lele.e_learning.activity.entity.Question;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
-
-import static lele.e_learning.activity.tools.Pack.ShowToast;
 
 public class Exam extends AppCompatActivity {
 
@@ -201,7 +199,7 @@ public class Exam extends AppCompatActivity {
                         ShowQuestion();
                         break;
                     }
-                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    ErrorAnswerFragment myDialogFragment = new ErrorAnswerFragment();
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("question", questions.get(page));
                     myDialogFragment.setArguments(bundle);
@@ -232,7 +230,7 @@ public class Exam extends AppCompatActivity {
                         ShowQuestion();
                         break;
                     }
-                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    ErrorAnswerFragment myDialogFragment = new ErrorAnswerFragment();
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("question", questions.get(page));
                     myDialogFragment.setArguments(bundle);
@@ -253,7 +251,7 @@ public class Exam extends AppCompatActivity {
                         ShowQuestion();
                         break;
                     }
-                    ErrorInfo myDialogFragment = new ErrorInfo();
+                    ErrorAnswerFragment myDialogFragment = new ErrorAnswerFragment();
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("question", questions.get(page));
                     myDialogFragment.setArguments(bundle);
