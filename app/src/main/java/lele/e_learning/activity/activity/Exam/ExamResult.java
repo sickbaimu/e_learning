@@ -34,7 +34,8 @@ public class ExamResult extends AppCompatActivity {
             if(getIntent().getStringExtra("answer").charAt(i)=='F')
                 errorNum += (i+1)+"、";
         }
-        errorNum = errorNum.substring(0,errorNum.length()-1);
+        if(!errorNum.equals(""))
+            errorNum = errorNum.substring(0,errorNum.length()-1);
         tvErrorQuestion.setText("错误题号:\n".concat(errorNum));
         SimpleDateFormat bartDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
         tvDay.setText("完成时间:\n".concat(bartDateFormat.format(new Date())));

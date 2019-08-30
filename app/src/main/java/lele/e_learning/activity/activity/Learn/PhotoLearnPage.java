@@ -64,8 +64,6 @@ public class PhotoLearnPage extends AppCompatActivity {
                 return;
             Bitmap bmp=BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             img.setImageBitmap(bmp);
-
-
             head.setText(getIntent().getStringExtra("head"));
             HttpUtil.sendHttpRequest("GetPhotoDescription?photoName="+getIntent().getStringExtra("head"),new HttpCallbackListener() {
                 @Override
@@ -77,28 +75,6 @@ public class PhotoLearnPage extends AppCompatActivity {
 
                 }
             });
-
-
-            //getImage("http://192.168.1.17:8080/photo/"+PhotoLearnList.names[position]+".jpg");
         }
 
-    public static void getImage(final String path) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    HttpURLConnection conn = (HttpURLConnection) new URL(path).openConnection();
-                    conn.setConnectTimeout(10000);
-                    conn.setRequestMethod("GET");
-                    if (conn.getResponseCode() == 200) {
-                        InputStream inputStream = conn.getInputStream();
-                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                        img.setImageBitmap(bitmap);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
 }

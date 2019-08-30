@@ -33,6 +33,7 @@ public class Home extends Activity implements View.OnClickListener {
     LinearLayout linearNotice,linearPost,linearVote;
     Button switch_learn,switch_bbs,switch_exam;
     Button buttonOrderExam,buttonRandomExam,buttonFinalExam,buttonMyScore,buttonCollection;
+    Button buttonNote;
     TextView tv_example_text_1,tv_example_text_2,tv_example_text_3;
     TextView tv_example_img_1,tv_example_img_2,tv_example_img_3;
     TextView tv_example_media_1,tv_example_media_2,tv_example_media_3;
@@ -90,6 +91,7 @@ public class Home extends Activity implements View.OnClickListener {
         buttonMyScore = findViewById(R.id.buttonMyScore);
         buttonCollection = findViewById(R.id.buttonCollection);
 
+        buttonNote = findViewById(R.id.buttonNote);
         ll_bbs = new LinearLayout[]{
                 findViewById(R.id.ll_bbs_1),findViewById(R.id.ll_bbs_2),
                 findViewById(R.id.ll_bbs_3),findViewById(R.id.ll_bbs_4),
@@ -134,6 +136,8 @@ public class Home extends Activity implements View.OnClickListener {
         buttonOrderExam.setOnClickListener(this);
         buttonFinalExam.setOnClickListener(this);
         buttonRandomExam.setOnClickListener(this);
+
+        buttonNote.setOnClickListener(this);
         MODEL = model_learn;
     }
 
@@ -194,6 +198,7 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.buttonRandomExam:Intent intent3 = new Intent(getApplicationContext(), Exam.class);intent3.putExtra("type","Random");startActivity(intent3);break;
             case R.id.buttonFinalExam:Intent intent4 = new Intent(getApplicationContext(), Exam.class);intent4.putExtra("type","Final");startActivity(intent4);break;
             case R.id.buttonCollection:startActivity(new Intent(getApplicationContext(),QuestionCollection.class));
+            case R.id.buttonNote:break;
             default:break;
         }
     }

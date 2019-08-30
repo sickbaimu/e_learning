@@ -113,7 +113,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
                     NoteFragment myDialogFragment = new NoteFragment();
                     Bundle bundle = new Bundle();
                     bundle.putString("type", "text");
-                    bundle.putString("title",tv_section.getText().toString().split(" ")[1]);
+                    bundle.putString("title",chapter_id+"."+section_order);
                     myDialogFragment.setArguments(bundle);
                     myDialogFragment.show(getFragmentManager(), "Dialog");
                     break;
