@@ -24,7 +24,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.Exam.ExamResult"></activity>
+        <activity android:name=".activity.activity.CheckNote"></activity>
+        <activity android:name=".activity.activity.Exam.MyScore" />
+        <activity android:name=".activity.activity.Exam.ExamResult" />
         <activity android:name=".activity.activity.Exam.QuestionCollection" />
         <activity android:name=".activity.activity.Exam.Exam" />
         <activity android:name=".activity.activity.Vote.VoteUpload" />

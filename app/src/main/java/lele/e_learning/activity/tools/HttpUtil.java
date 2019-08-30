@@ -9,7 +9,7 @@ import java.net.URL;
 
 
 public class HttpUtil {
-    private static String ip_address = "http://192.168.31.32:8080/";
+    private static String ip_address = "http://192.168.1.21:8080/";
     public static void sendHttpRequest(final String request, final HttpCallbackListener listener) {
         new Thread(new Runnable() {
             @Override

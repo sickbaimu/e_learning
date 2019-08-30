@@ -18,6 +18,7 @@ import lele.e_learning.activity.activity.BBS.ChildBBSPage;
 import lele.e_learning.activity.activity.BBS.Notice;
 import lele.e_learning.activity.activity.BBS.Post;
 import lele.e_learning.activity.activity.Exam.Exam;
+import lele.e_learning.activity.activity.Exam.MyScore;
 import lele.e_learning.activity.activity.Exam.QuestionCollection;
 import lele.e_learning.activity.activity.Learn.MediaLearnList;
 import lele.e_learning.activity.activity.Learn.PhotoLearnList;
@@ -197,8 +198,10 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.buttonOrderExam:Intent intent1 = new Intent(getApplicationContext(), Exam.class);intent1.putExtra("type","Order");startActivity(intent1);break;
             case R.id.buttonRandomExam:Intent intent3 = new Intent(getApplicationContext(), Exam.class);intent3.putExtra("type","Random");startActivity(intent3);break;
             case R.id.buttonFinalExam:Intent intent4 = new Intent(getApplicationContext(), Exam.class);intent4.putExtra("type","Final");startActivity(intent4);break;
-            case R.id.buttonCollection:startActivity(new Intent(getApplicationContext(),QuestionCollection.class));
-            case R.id.buttonNote:break;
+            case R.id.buttonCollection:startActivity(new Intent(getApplicationContext(),QuestionCollection.class));break;
+            case R.id.buttonMyScore:startActivity(new Intent(getApplicationContext(), MyScore.class));break;
+
+            case R.id.buttonNote:startActivity(new Intent(getApplicationContext(), CheckNote.class));break;
             default:break;
         }
     }
