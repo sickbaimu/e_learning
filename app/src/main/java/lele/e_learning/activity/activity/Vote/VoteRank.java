@@ -32,7 +32,7 @@ public class VoteRank extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote_rank);
-        HttpUtil.sendHttpRequest("GetRank", new HttpCallbackListener() {
+        HttpUtil.sendHttpRequest("GetVoteRank", new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 runOnUiThread(new Runnable() {

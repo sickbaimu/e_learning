@@ -39,13 +39,13 @@ public class ExamResult extends AppCompatActivity {
         tvErrorQuestion.setText("错误题号:\n".concat(errorNum));
         SimpleDateFormat bartDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
         tvDay.setText("完成时间:\n".concat(bartDateFormat.format(new Date())));
-        if(getIntent().getStringExtra("model").equals("Final")){
             HttpUtil.sendHttpRequest("AddScore?userID="+ ClientUser.getId()+
                     "&score="+getIntent().getStringExtra("point")+
                     "&time="+getIntent().getStringExtra("time")+
                     "&rate="+getIntent().getStringExtra("rate")+
                     "&errorNum="+errorNum+
-                    "&day="+bartDateFormat.format(new Date()), new HttpCallbackListener() {
+                    "&day="+bartDateFormat.format(new Date())+
+                    "&model="+getIntent().getStringExtra("model"), new HttpCallbackListener() {
                 @Override
                 public void onFinish(String response) {
 
@@ -57,5 +57,5 @@ public class ExamResult extends AppCompatActivity {
                 }
             });
         }
-    }
+
 }

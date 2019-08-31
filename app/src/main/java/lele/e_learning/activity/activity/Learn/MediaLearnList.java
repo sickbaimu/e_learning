@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import lele.e_learning.R;
+import lele.e_learning.activity.tools.HttpCallbackListener;
+import lele.e_learning.activity.tools.HttpUtil;
 
 public class MediaLearnList extends AppCompatActivity {
     private GridView gridView;
@@ -30,33 +32,6 @@ public class MediaLearnList extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         MediaAdapter mediaAdapter = new MediaAdapter(getApplicationContext(),names);
         recyclerView.setAdapter(mediaAdapter);
-        //配置适配器
-
-        /*
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //设置被点击的View的共享元素过渡名
-                Intent intent = new Intent(getApplicationContext(),PhotoLearnPage.class);
-                intent.putExtra("position",position);
-                LinearLayout linearLayout = (LinearLayout)view;
-                ImageView imageView = (ImageView)linearLayout.getChildAt(0);
-                imageView.setTransitionName("shared_elements");
-
-                TextView textView = (TextView)linearLayout.getChildAt(1);
-                intent.putExtra("head",textView.getText().toString());
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                ((BitmapDrawable)imageView.getDrawable()).getBitmap().compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                byte[] bytes=baos.toByteArray();
-                Bundle b = new Bundle();
-                b.putByteArray("bitmap", bytes);
-                intent.putExtras(b);
-                //以"shared_elements"为名的过渡动画打开新的Activity
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(MediaLearnList.this,view,"shared_elements").toBundle());
-            }
-        });
-        */
-        //ShowToast(getApplicationContext(),""+gridView.getAdapter().getItem(0));
     }
 
     class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.ViewHolder> {
@@ -85,9 +60,22 @@ public class MediaLearnList extends AppCompatActivity {
                     CardView cardView = (CardView)view;
                     TextView textView = cardView.findViewById(R.id.text);
                     String item = textView.getText().toString();
-                    Intent intent = new Intent(getApplicationContext(), MediaLearnPage.class);
-                    intent.putExtra("item","https://v.youku.com/v_show/id_XNTA4ODE5MTQ4.html?spm=a2h0k.11417342.soresults.dtitle");
-                    startActivity(intent);
+                    HttpUtil.sendHttpRequest("GetMediaPath?name=" + item, new HttpCallbackListener() {
+                        @Override
+                        public void onFinish(String response) {
+                            Intent intent = new Intent(getApplicationContext(), MediaLearnPage.class);
+                            intent.putExtra("item",response);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+
+                        }
+                    });
+
+
+
                 }
             });
             return holder;

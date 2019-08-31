@@ -10,8 +10,11 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
+
 import lele.e_learning.R;
 import lele.e_learning.activity.fragment.NoteFragment;
+import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
 import lele.e_learning.activity.tools.Pack;
@@ -25,10 +28,12 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
     String chapter_id,section_order;
     int chapter_size = -1;
     Button buttonNote;
+    Date beginTime,endTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_learn_page);
+        beginTime = new Date(System.currentTimeMillis());
         tv_content = findViewById(R.id.tv_content);
         tv_chapter = findViewById(R.id.tv_chapter);
         tv_section = findViewById(R.id.tv_section);
@@ -121,4 +126,22 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        endTime = new Date(System.currentTimeMillis());
+        long time = endTime.getTime() - beginTime.getTime();
+        int point = (int)time/120000;
+        HttpUtil.sendHttpRequest("AddPoint?userID="+ ClientUser.getId()+"&point="+point+"&type=TextTime", new HttpCallbackListener() {
+            @Override
+            public void onFinish(String response) {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
+        super.onDestroy();
+    }
 }

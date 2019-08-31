@@ -20,6 +20,7 @@ import lele.e_learning.activity.activity.BBS.Post;
 import lele.e_learning.activity.activity.Exam.Exam;
 import lele.e_learning.activity.activity.Exam.MyScore;
 import lele.e_learning.activity.activity.Exam.QuestionCollection;
+import lele.e_learning.activity.activity.Learn.CheckNote;
 import lele.e_learning.activity.activity.Learn.MediaLearnList;
 import lele.e_learning.activity.activity.Learn.PhotoLearnList;
 import lele.e_learning.activity.activity.Learn.TextLearnList;
@@ -34,7 +35,7 @@ public class Home extends Activity implements View.OnClickListener {
     LinearLayout linearNotice,linearPost,linearVote;
     Button switch_learn,switch_bbs,switch_exam;
     Button buttonOrderExam,buttonRandomExam,buttonFinalExam,buttonMyScore,buttonCollection;
-    Button buttonNote;
+    Button buttonNote,buttonPointRank,buttonPointToday;
     TextView tv_example_text_1,tv_example_text_2,tv_example_text_3;
     TextView tv_example_img_1,tv_example_img_2,tv_example_img_3;
     TextView tv_example_media_1,tv_example_media_2,tv_example_media_3;
@@ -93,6 +94,9 @@ public class Home extends Activity implements View.OnClickListener {
         buttonCollection = findViewById(R.id.buttonCollection);
 
         buttonNote = findViewById(R.id.buttonNote);
+        buttonPointRank = findViewById(R.id.buttonPointRank);
+        buttonPointToday = findViewById(R.id.buttonPointToday);
+
         ll_bbs = new LinearLayout[]{
                 findViewById(R.id.ll_bbs_1),findViewById(R.id.ll_bbs_2),
                 findViewById(R.id.ll_bbs_3),findViewById(R.id.ll_bbs_4),
@@ -139,6 +143,8 @@ public class Home extends Activity implements View.OnClickListener {
         buttonRandomExam.setOnClickListener(this);
 
         buttonNote.setOnClickListener(this);
+        buttonPointRank.setOnClickListener(this);
+        buttonPointToday.setOnClickListener(this);
         MODEL = model_learn;
     }
 
@@ -202,6 +208,8 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.buttonMyScore:startActivity(new Intent(getApplicationContext(), MyScore.class));break;
 
             case R.id.buttonNote:startActivity(new Intent(getApplicationContext(), CheckNote.class));break;
+            case R.id.buttonPointRank:startActivity(new Intent(getApplicationContext(),PointRank.class));break;
+            case R.id.buttonPointToday:startActivity(new Intent(getApplicationContext(),PointToday.class));break;
             default:break;
         }
     }

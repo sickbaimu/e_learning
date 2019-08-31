@@ -65,7 +65,7 @@ public class PhotoLearnPage extends AppCompatActivity {
             Bitmap bmp=BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
             img.setImageBitmap(bmp);
             head.setText(getIntent().getStringExtra("head"));
-            HttpUtil.sendHttpRequest("GetPhotoDescription?photoName="+getIntent().getStringExtra("head"),new HttpCallbackListener() {
+            HttpUtil.sendHttpRequest("GetPhotoDescription?photoName="+getIntent().getStringExtra("head")+"&userID="+ClientUser.getId(),new HttpCallbackListener() {
                 @Override
                 public void onFinish(String response) {
                     text.setText(response);

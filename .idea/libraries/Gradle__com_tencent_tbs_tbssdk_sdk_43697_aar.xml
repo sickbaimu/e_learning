@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tencent.tbs.tbssdk:sdk:43697@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/591f5c3b80147d845e9ab7130aa0b483/jars/libs/tbs_sdk_thirdapp_v4.3.0.1072_43646_sharewithdownloadwithfile_withoutGame_obfs_20190429_175122.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/591f5c3b80147d845e9ab7130aa0b483/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/591f5c3b80147d845e9ab7130aa0b483/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tencent.tbs.tbssdk/sdk/43697/a7b123d034591c78d1e862e6e395119d9e078836/sdk-43697-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

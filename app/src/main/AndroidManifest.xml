@@ -19,12 +19,19 @@
 
     <application
         android:allowBackup="false"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/icon2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.CheckNote"></activity>
+        <activity android:name=".activity.activity.PointToday"></activity>
+        <activity android:name=".activity.activity.PointRank" />
+        <activity
+            android:name=".activity.activity.Learn.MediaLearnPage"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.activity.Learn.CheckNote" />
         <activity android:name=".activity.activity.Exam.MyScore" />
         <activity android:name=".activity.activity.Exam.ExamResult" />
         <activity android:name=".activity.activity.Exam.QuestionCollection" />
@@ -51,9 +58,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.Learn.MediaLearnList"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.activity.Learn.MediaLearnPage"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.activity.Vote.VoteList" />
         <activity
