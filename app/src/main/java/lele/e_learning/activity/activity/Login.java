@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import lele.e_learning.R;
-import lele.e_learning.activity.activity.Learn.TeacherHome;
 import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;

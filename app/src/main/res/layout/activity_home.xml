@@ -83,6 +83,7 @@
                     android:layout_height="match_parent" />
             </LinearLayout>
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/module_learn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

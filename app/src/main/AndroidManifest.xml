@@ -40,7 +40,7 @@
         <activity android:name=".activity.activity.Vote.VoteRank" />
         <activity android:name=".activity.activity.BBS.Post" />
         <activity android:name=".activity.activity.BBS.Notice" />
-        <activity android:name=".activity.activity.Learn.TeacherHome" />
+        <activity android:name=".activity.activity.TeacherHome" />
         <activity
             android:name=".activity.activity.BBS.ChildBBSPage"
             android:screenOrientation="portrait" />
