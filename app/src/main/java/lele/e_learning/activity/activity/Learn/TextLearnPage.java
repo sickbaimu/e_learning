@@ -29,10 +29,13 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
     int chapter_size = -1;
     Button buttonNote;
     Date beginTime,endTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_learn_page);
+
+
         beginTime = new Date(System.currentTimeMillis());
         tv_content = findViewById(R.id.tv_content);
         tv_chapter = findViewById(R.id.tv_chapter);
@@ -43,7 +46,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         b_back = findViewById(R.id.b_back);
         chapter_id = getIntent().getStringExtra("chapter_id");
         section_order = getIntent().getStringExtra("section_order");
-        HttpUtil.sendHttpRequest("GetTextContent?" + "chapter_id=" + chapter_id+"&&section_order="+section_order, new HttpCallbackListener() {
+        HttpUtil.sendHttpRequest("GetTextContent?" + "chapter_id=" + chapter_id+"&&section_order="+section_order+"&userID="+ ClientUser.getId(), new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 runOnUiThread(new Runnable() {

@@ -53,7 +53,7 @@ public class PhotoLearnPage extends AppCompatActivity {
 
             Intent intent = getIntent();
             int position = intent.getIntExtra("position",0);
-            //img.setImageResource(PhotoLearnList.getIcon()[position]);
+            //img.setImageResource(TeacherPhotoLearnList.getIcon()[position]);
             text.setText("描述文字：");
 
             //主要的语句---将当前Activity的View和自己定义的Key绑定起来

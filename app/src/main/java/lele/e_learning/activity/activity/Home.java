@@ -25,6 +25,7 @@ import lele.e_learning.activity.activity.Learn.MediaLearnList;
 import lele.e_learning.activity.activity.Learn.PhotoLearnList;
 import lele.e_learning.activity.activity.Learn.TextLearnList;
 import lele.e_learning.activity.activity.Vote.VoteList;
+import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
 import lele.e_learning.activity.tools.Pack;
@@ -40,6 +41,7 @@ public class Home extends Activity implements View.OnClickListener {
     TextView tv_example_img_1,tv_example_img_2,tv_example_img_3;
     TextView tv_example_media_1,tv_example_media_2,tv_example_media_3;
     TextView tvNextPage,tvLastPage,tvNowPage;
+    TextView tvTextRate,tvPhotoRate,tvMediaRate;
     LinearLayout[] ll_bbs;
     String imgNames,mediaNames;
     final static int model_learn = 1;
@@ -47,6 +49,7 @@ public class Home extends Activity implements View.OnClickListener {
     final static int model_exam = 3;
     static int MODEL = model_bbs;
     int page = 0;
+    String rate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +99,10 @@ public class Home extends Activity implements View.OnClickListener {
         buttonNote = findViewById(R.id.buttonNote);
         buttonPointRank = findViewById(R.id.buttonPointRank);
         buttonPointToday = findViewById(R.id.buttonPointToday);
+
+        tvTextRate = findViewById(R.id.tvTextRate);
+        tvPhotoRate = findViewById(R.id.tvPhotoRate);
+        tvMediaRate = findViewById(R.id.tvMediaRate);
 
         ll_bbs = new LinearLayout[]{
                 findViewById(R.id.ll_bbs_1),findViewById(R.id.ll_bbs_2),
@@ -183,27 +190,27 @@ public class Home extends Activity implements View.OnClickListener {
             case R.id.switch_learn:MODEL = model_learn;fresh_model();break;
             case R.id.switch_bbs:MODEL = model_bbs;fresh_model();break;
             case R.id.switch_exam:MODEL = model_exam;fresh_model();break;
-            case R.id.ll_1:startActivity(new Intent(getApplicationContext(), TextLearnList.class));break;
+            case R.id.ll_1:Intent intent0 = new Intent(getApplicationContext(), TextLearnList.class);
+                intent0.putExtra("rate",rate.split(" ")[0]);
+                startActivity(intent0);break;
             case R.id.ll_2:
-                Intent intent = new Intent(getApplicationContext(), PhotoLearnList.class);
-                intent.putExtra("names",imgNames);
-                //Toast.makeText(getApplicationContext(),names,Toast.LENGTH_LONG).show();
-                startActivity(intent);
-                break;
+                Intent intent1 = new Intent(getApplicationContext(), PhotoLearnList.class);
+                intent1.putExtra("names",imgNames);
+                intent1.putExtra("rate",rate.split(" ")[1]);
+                startActivity(intent1);break;
             case R.id.ll_3:
                 Intent intent2 = new Intent(getApplicationContext(), MediaLearnList.class);
                 intent2.putExtra("names",mediaNames);
-                //Toast.makeText(getApplicationContext(),names,Toast.LENGTH_LONG).show();
-                startActivity(intent2);
-                break;
+                intent2.putExtra("rate",rate.split(" ")[2]);
+                startActivity(intent2);break;
             case R.id.linearNotice:startActivity(new Intent(getApplicationContext(), Notice.class));break;
             case R.id.linearPost:startActivity(new Intent(getApplicationContext(), Post.class));break;
             case R.id.linearVote:startActivity(new Intent(getApplicationContext(), VoteList.class));break;
             case R.id.tvNextPage:FreshPage(1);break;
             case R.id.tvLastPage:FreshPage(-1);break;
-            case R.id.buttonOrderExam:Intent intent1 = new Intent(getApplicationContext(), Exam.class);intent1.putExtra("type","Order");startActivity(intent1);break;
-            case R.id.buttonRandomExam:Intent intent3 = new Intent(getApplicationContext(), Exam.class);intent3.putExtra("type","Random");startActivity(intent3);break;
-            case R.id.buttonFinalExam:Intent intent4 = new Intent(getApplicationContext(), Exam.class);intent4.putExtra("type","Final");startActivity(intent4);break;
+            case R.id.buttonOrderExam:Intent intent3 = new Intent(getApplicationContext(), Exam.class);intent3.putExtra("type","Order");startActivity(intent3);break;
+            case R.id.buttonRandomExam:Intent intent4 = new Intent(getApplicationContext(), Exam.class);intent4.putExtra("type","Random");startActivity(intent4);break;
+            case R.id.buttonFinalExam:Intent intent5 = new Intent(getApplicationContext(), Exam.class);intent5.putExtra("type","Final");startActivity(intent5);break;
             case R.id.buttonCollection:startActivity(new Intent(getApplicationContext(),QuestionCollection.class));break;
             case R.id.buttonMyScore:startActivity(new Intent(getApplicationContext(), MyScore.class));break;
 
@@ -262,7 +269,7 @@ public class Home extends Activity implements View.OnClickListener {
     }
     void init_ui(){
         //获取文本目录
-        HttpUtil.sendHttpRequest("GetHomeInfo", new HttpCallbackListener() {
+        HttpUtil.sendHttpRequest("GetHomeInfo?userID="+ClientUser.getId(), new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 runOnUiThread(new Runnable() {
@@ -274,7 +281,8 @@ public class Home extends Activity implements View.OnClickListener {
                             String photoList = jsonObject.getString("photoList");
                             String mediaList = jsonObject.getString("mediaList");
                             String bbsList = jsonObject.getString("bbsList");
-                            ShowList(new String[]{textList,photoList,mediaList,bbsList});
+                            String rate = jsonObject.getString("rate");
+                            ShowList(new String[]{textList,photoList,mediaList,bbsList,rate});
                         }catch (JSONException e){
                             e.printStackTrace();
                         }
@@ -287,6 +295,7 @@ public class Home extends Activity implements View.OnClickListener {
 
             }
         });
+
     }
 
     public void ShowList(final String[] response){
@@ -346,6 +355,11 @@ public class Home extends Activity implements View.OnClickListener {
                 }catch (JSONException e) {
                     e.printStackTrace();
                 }
+                //显示学习进度
+                rate = response[4];
+                tvTextRate.setText("文本阅读 "+response[4].split(" ")[0]);
+                tvPhotoRate.setText("经典图示 "+response[4].split(" ")[1]);
+                tvMediaRate.setText("视频资源 "+response[4].split(" ")[2]);
 
             }
         });

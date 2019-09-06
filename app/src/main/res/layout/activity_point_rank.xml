@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@color/White"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/rankHead"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    >
+
+    <LinearLayout
+        android:background="@drawable/shape_corner_white"
+        android:layout_margin="30dp"
+        android:padding="30dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:textSize="18sp"
-        android:layout_gravity="center"
-        android:textColor="@color/White"
-        android:text="积分排行榜"
-        android:gravity="center"
-        android:background="@color/DeepBlue" />
-    <android.support.v7.widget.RecyclerView
-        android:gravity="top"
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="25sp"
+            android:gravity="center"
+            android:text="积分排行榜"
+            android:textColor="@color/DeepBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_margin="10dp"
+            android:background="@color/DeepBlue"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </LinearLayout>

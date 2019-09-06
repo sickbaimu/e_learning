@@ -15,17 +15,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import lele.e_learning.R;
+import lele.e_learning.activity.activity.teacher.TeacherMediaLearnPage;
+import lele.e_learning.activity.fragment.MediaFragment;
+import lele.e_learning.activity.fragment.QuestionFragment;
+import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
 
 public class MediaLearnList extends AppCompatActivity {
-    private GridView gridView;
-    MediaAdapter myAdapter;
     static String[] names;
+    TextView tvRate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_learn_list);
+        tvRate = findViewById(R.id.tvRate);
+        tvRate.setText("你已经学习了"+getIntent().getStringExtra("rate"));
         names = getIntent().getStringExtra("names").split("-");
         RecyclerView recyclerView =  findViewById(R.id.recyclerview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -59,11 +65,11 @@ public class MediaLearnList extends AppCompatActivity {
                 public void onClick(View v){
                     CardView cardView = (CardView)view;
                     TextView textView = cardView.findViewById(R.id.text);
-                    String item = textView.getText().toString();
-                    HttpUtil.sendHttpRequest("GetMediaPath?name=" + item, new HttpCallbackListener() {
+                    final String item = textView.getText().toString();
+                    HttpUtil.sendHttpRequest("GetMediaPath?name=" + item+"&userID="+ ClientUser.getId(), new HttpCallbackListener() {
                         @Override
                         public void onFinish(String response) {
-                            Intent intent = new Intent(getApplicationContext(), MediaLearnPage.class);
+                            Intent intent = new Intent(getApplicationContext(), TeacherMediaLearnPage.class);
                             intent.putExtra("item",response);
                             startActivity(intent);
                         }

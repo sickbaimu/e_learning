@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import lele.e_learning.R;
+import lele.e_learning.activity.activity.teacher.TeacherHome;
 import lele.e_learning.activity.tools.ClientUser;
 import lele.e_learning.activity.tools.HttpCallbackListener;
 import lele.e_learning.activity.tools.HttpUtil;
@@ -45,6 +46,7 @@ public class Login extends Activity implements View.OnClickListener{
                         /*教师端登录验证*/
                         else if(response.equals("-2"))
                         {
+                            ClientUser.setId("999999");//将当前登录用户保存到客户端
                             startActivity(new Intent(getApplicationContext(), TeacherHome.class));
                         }
                         /*一般用户登录验证*/

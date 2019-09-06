@@ -29,11 +29,13 @@ public class PhotoLearnList extends AppCompatActivity {
     private GridView gridView;
     MyAdapter myAdapter;
     static String[] names;
+    TextView tvRate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_learn_list);
-        names = getIntent().getStringExtra("names").split("-");
+        tvRate = findViewById(R.id.tvRate);
+        tvRate.setText("你已经学习了"+getIntent().getStringExtra("rate"));        names = getIntent().getStringExtra("names").split("-");
         gridView = findViewById(R.id.grid_view);
         //配置适配器
         myAdapter = new MyAdapter(getApplicationContext(),names);

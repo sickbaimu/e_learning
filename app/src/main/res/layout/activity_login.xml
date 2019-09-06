@@ -79,7 +79,7 @@
             <EditText
                 android:id="@+id/edit_username"
                 android:textSize="20sp"
-                android:text="zhangsan"
+                android:text="admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="学号或教工号"/>
@@ -87,7 +87,7 @@
                 android:id="@+id/edit_pwd"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
-                android:text="333"
+                android:text="admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="密码"/>

@@ -31,11 +31,14 @@ public class TextLearnList extends Activity {
     LinearLayout layout_content;
     String chapter_name,chapter_order;
     TextView textView;
+    TextView tvRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_learn_list);
+        tvRate = findViewById(R.id.tvRate);
+        tvRate.setText("你已经学习了"+getIntent().getStringExtra("rate"));
         layout_content = findViewById(R.id.layout_content);
         HttpUtil.sendHttpRequest("GetTextList",new HttpCallbackListener() {
             @Override

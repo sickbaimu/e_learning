@@ -100,16 +100,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvTextRate"
                         android:text="文本阅读       15%"
                         android:textSize="14sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvPhotoRate"
                         android:text="经典图示       20%"
                         android:textSize="14sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/tvMediaRate"
                         android:text="视频资源       66%"
                         android:textSize="14sp"
                         android:layout_width="match_parent"

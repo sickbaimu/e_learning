@@ -25,12 +25,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.PointToday"></activity>
+        <activity android:name=".activity.activity.teacher.TeacherRate"></activity>
+        <activity android:name=".activity.activity.teacher.TeacherQuestionList"></activity>
+        <activity android:name=".activity.activity.teacher.TeacherScore" />
+        <activity android:name=".activity.activity.teacher.TeacherRank" />
+        <activity android:name=".activity.activity.teacher.TeacherMBBS" />
+        <activity android:name=".activity.activity.teacher.TeacherNotice" />
+        <activity android:name=".activity.activity.teacher.TeacherMediaLearnPage" />
+        <activity android:name=".activity.activity.teacher.TeacherMediaLearnList" />
+        <activity android:name=".activity.activity.teacher.TeacherPhotoLearnPage" />
+        <activity android:name=".activity.activity.teacher.TeacherPhotoLearnList" />
+        <activity android:name=".activity.activity.teacher.TeacherTextLearnPage" />
+        <activity android:name=".activity.activity.teacher.TeacherTextLearnList" />
+        <activity android:name=".activity.activity.PointToday" />
         <activity android:name=".activity.activity.PointRank" />
         <activity
             android:name=".activity.activity.Learn.MediaLearnPage"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.activity.Learn.CheckNote" />
         <activity android:name=".activity.activity.Exam.MyScore" />
         <activity android:name=".activity.activity.Exam.ExamResult" />
@@ -40,7 +52,7 @@
         <activity android:name=".activity.activity.Vote.VoteRank" />
         <activity android:name=".activity.activity.BBS.Post" />
         <activity android:name=".activity.activity.BBS.Notice" />
-        <activity android:name=".activity.activity.TeacherHome" />
+        <activity android:name=".activity.activity.teacher.TeacherHome" />
         <activity
             android:name=".activity.activity.BBS.ChildBBSPage"
             android:screenOrientation="portrait" />
