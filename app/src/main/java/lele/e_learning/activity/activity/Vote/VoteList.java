@@ -142,7 +142,7 @@ public class VoteList extends AppCompatActivity {
             if (convertView == null) {
                 linearLayout = (LinearLayout) View.inflate(context, R.layout.item, null);
                 ImageView img = (ImageView) linearLayout.getChildAt(0);
-                setImage("work/"+names[position]+".jpg", img);
+                setImage("w/"+names[position]+".jpg", img);
                 TextView textView = (TextView)linearLayout.getChildAt(1);
                 textView.setText(names[position]);
 

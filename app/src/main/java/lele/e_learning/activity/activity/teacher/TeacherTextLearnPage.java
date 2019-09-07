@@ -27,10 +27,9 @@ import static lele.e_learning.activity.tools.Pack.ShowToast;
 public class TeacherTextLearnPage extends AppCompatActivity implements View.OnClickListener{
 
     TextView tv_content,tv_chapter,tv_section;
-    Button b_last_page,b_next_page,b_back;
-    String chapter_id,section_order;
+    Button b_last_page,b_next_page,b_back,buttonEdit;
+    String chapter_id,section_order,name,content,id;
     int chapter_size = -1;
-    Button buttonAdd,buttonUpdate,buttonDelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +40,8 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
         b_last_page = findViewById(R.id.b_last_page);
         b_next_page = findViewById(R.id.b_next_page);
         b_back = findViewById(R.id.b_back);
-        buttonAdd = findViewById(R.id.buttonAdd);
-        buttonDelete = findViewById(R.id.buttonDelete);
-        buttonUpdate = findViewById(R.id.buttonUpdate);
-        buttonAdd.setOnClickListener(this);
-        buttonUpdate.setOnClickListener(this);
-        buttonDelete.setOnClickListener(this);
+        buttonEdit = findViewById(R.id.buttonEdit);
+
         chapter_id = getIntent().getStringExtra("chapter_id");
         section_order = getIntent().getStringExtra("section_order");
         HttpUtil.sendHttpRequest("GetTextContent?" + "chapter_id=" + chapter_id+"&&section_order="+section_order, new HttpCallbackListener() {
@@ -60,6 +55,9 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
                             tv_chapter.setText(Pack.pack(jsonObject.getString("chapter_order"),jsonObject.getString("chapter_name"),"章"));
                             tv_section.setText(Pack.pack(jsonObject.getString("section_order"),jsonObject.getString("section_name"),"节"));
                             tv_content.setText(jsonObject.getString("content"));
+                            name = jsonObject.getString("section_name");
+                            content = jsonObject.getString("content");
+                            id = jsonObject.getString("flag");
                         }catch (JSONException e){
                             e.printStackTrace();
                         }
@@ -87,6 +85,7 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
         b_last_page.setOnClickListener(this);
         b_next_page.setOnClickListener(this);
         b_back.setOnClickListener(this);
+        buttonEdit.setOnClickListener(this);
 
     }
 
@@ -120,13 +119,15 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
                 overridePendingTransition(0,0);
                 finish();
                 break;
-            case R.id.buttonAdd:break;
 
-            case R.id.buttonUpdate:
+            case R.id.buttonEdit:
                 TextFragment myDialogFragment = new TextFragment();
                 Bundle bundle = new Bundle();
-                //bundle.putString("type", "text");
-                //bundle.putString("title",chapter_id+"."+section_order);
+                bundle.putString("id",id);
+                bundle.putString("chapterID", chapter_id);
+                bundle.putString("sectionOrder",section_order);
+                bundle.putString("name",name);
+                bundle.putString("content",content);
                 myDialogFragment.setArguments(bundle);
                 myDialogFragment.show(getFragmentManager(), "Dialog");
                 break;

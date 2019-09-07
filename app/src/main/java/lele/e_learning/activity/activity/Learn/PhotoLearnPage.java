@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -68,7 +71,13 @@ public class PhotoLearnPage extends AppCompatActivity {
             HttpUtil.sendHttpRequest("GetPhotoDescription?photoName="+getIntent().getStringExtra("head")+"&userID="+ClientUser.getId(),new HttpCallbackListener() {
                 @Override
                 public void onFinish(String response) {
-                    text.setText(response);
+                    try{
+                        JSONObject jsonObject = new JSONObject(response);
+                        text.setText(jsonObject.getString("des"));
+                    } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
                 }
                 @Override
                 public void onError(Exception e) {

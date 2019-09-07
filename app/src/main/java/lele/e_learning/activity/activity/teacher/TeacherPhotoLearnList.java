@@ -95,7 +95,7 @@ public class TeacherPhotoLearnList extends AppCompatActivity {
             if (convertView == null) {
                 linearLayout = (LinearLayout) View.inflate(context, R.layout.item, null);
                 ImageView img = (ImageView) linearLayout.getChildAt(0);
-                setImage("photo/"+names[position]+".jpg", img);
+                setImage("p/"+names[position]+".jpg", img);
                 TextView textView = (TextView)linearLayout.getChildAt(1);
                 textView.setText(names[position]);
 

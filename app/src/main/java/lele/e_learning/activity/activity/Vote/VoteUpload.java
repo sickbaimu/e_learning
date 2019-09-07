@@ -24,6 +24,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -46,7 +47,7 @@ public class VoteUpload extends AppCompatActivity {
     public static final int CHOOSE_PHOTO = 2;
 
     private ImageView picture;
-
+    EditText editName;
     private Uri imageUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class VoteUpload extends AppCompatActivity {
             }
         });
         picture = findViewById(R.id.picture);
+        editName = findViewById(R.id.editName);
         takePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,7 +208,7 @@ public class VoteUpload extends AppCompatActivity {
     void send(){
         Bitmap bitmap = ((BitmapDrawable) picture.getDrawable()).getBitmap();
         String base64 = bitmapToBase64(bitmap);
-        HttpUtil.sendHttpRequest("UpLoadWork?userID="+ ClientUser.getId()+"&name="+"未命名" +"&base64=" + base64, new HttpCallbackListener() {
+        HttpUtil.sendHttpRequest("UpLoadWork?userID="+ ClientUser.getId()+"&name="+editName.getText().toString() +"&base64=" + base64, new HttpCallbackListener() {
             @Override
             public void onFinish(String response) {
                 if(response.equals("0"))
@@ -230,7 +232,7 @@ public class VoteUpload extends AppCompatActivity {
             if (null != bitmap) {
                 bos = new ByteArrayOutputStream();
                 //将bitmap放入字节数组流中
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 70, bos);
                 // 将bos流缓存在内存中的数据全部输出，清空缓存
                 bos.flush();
                 bos.close();

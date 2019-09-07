@@ -23,8 +23,9 @@ public class TextFragment extends DialogFragment implements DialogInterface.OnCl
     /**
      * 自定义的DialogFragment，
      */
-   EditText editHead,editChapter,editSection,editContent;
-   Button buttonSure,buttonCancel;
+    EditText editHead,editChapter,editSection,editContent;
+    private Button buttonAdd, buttonUpdate, buttonDelete, buttonCancel;
+    String id = "-1";
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         /*初始化界面*/
@@ -36,44 +37,80 @@ public class TextFragment extends DialogFragment implements DialogInterface.OnCl
         editChapter = view.findViewById(R.id.editChapter);
         editSection = view.findViewById(R.id.editSection);
         editContent = view.findViewById(R.id.editContent);
-        buttonSure = view.findViewById(R.id.buttonSure);
+
+        buttonUpdate = view.findViewById(R.id.buttonUpdate);
         buttonCancel = view.findViewById(R.id.buttonCancel);
+        buttonAdd = view.findViewById(R.id.buttonAdd);
+        buttonDelete = view.findViewById(R.id.buttonDelete);
         builder.setView(view);
         final Bundle bundle = getArguments();
         if (bundle != null) {
-            /*
-            type = bundle.getString("type");
-            if(type!=null)
-                tvType.setText("类型：".concat(type));
-            title = bundle.getString("title");
-                if(title!=null)
-            tvAddress.setText("位置：".concat(title));
-            */
+            editHead.setText(bundle.getString("name"));
+            editContent.setText(bundle.getString("content"));
+            editSection.setText(bundle.getString("sectionOrder"));
+            editChapter.setText(bundle.getString("chapterID"));
+            id = bundle.getString("id");
         }
-        /*
-         * 确定按钮响应函数
-         */
-        buttonSure.setOnClickListener(new View.OnClickListener() {
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                /*
-                HttpUtil.sendHttpRequest("AddNote?userID=" + ClientUser.getId()+"&type="+type+"&title="+title+"&TAG="+editTAG.getText().toString()+"&content="+editContent.getText().toString(), new HttpCallbackListener() {
+            public void onClick(View view) {
+                HttpUtil.sendHttpRequest("AddText?name="+editHead.getText().toString()+
+                        "&content="+editContent.getText().toString()+
+                        "&order="+editSection.getText().toString()+
+                        "&chapter="+editChapter.getText().toString(), new HttpCallbackListener() {
                     @Override
                     public void onFinish(String response) {
                         ShowToast(getActivity(),"添加成功");
-                        dismiss();
                     }
 
                     @Override
                     public void onError(Exception e) {
                         ShowToast(getActivity(),"添加失败");
-
                     }
                 });
-                */
             }
         });
 
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HttpUtil.sendHttpRequest("UpdateText?name="+editHead.getText().toString()+
+                        "&content="+editContent.getText().toString()+
+                        "&order="+editContent.getText().toString()+
+                        "&chapter="+editContent.getText().toString()+
+                        "&id="+id, new HttpCallbackListener() {
+                    @Override
+                    public void onFinish(String response) {
+                        ShowToast(getActivity(),"修改成功");
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        ShowToast(getActivity(),"修改失败");
+
+                    }
+                });
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HttpUtil.sendHttpRequest("DeleteText?id="+id, new HttpCallbackListener() {
+                    @Override
+                    public void onFinish(String response) {
+                        ShowToast(getActivity(),"删除成功");
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        ShowToast(getActivity(),"删除失败");
+                    }
+                });
+            }
+        });
         /*
          * 取消按钮响应函数
          */
