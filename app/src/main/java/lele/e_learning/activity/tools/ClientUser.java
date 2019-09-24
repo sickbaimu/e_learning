@@ -6,6 +6,7 @@ public class ClientUser {
         return id;
     }
 
+
     public static void setId(String id) {
         ClientUser.id = id;
     }

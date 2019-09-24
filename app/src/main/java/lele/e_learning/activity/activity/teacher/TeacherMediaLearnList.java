@@ -25,6 +25,7 @@ public class TeacherMediaLearnList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_media_learn_list);
         names = getIntent().getStringExtra("names").split("-");
+
         RecyclerView recyclerView =  findViewById(R.id.recyclerview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -85,7 +86,7 @@ public class TeacherMediaLearnList extends AppCompatActivity {
         @Override
         public void onBindViewHolder(MediaAdapter.ViewHolder holder, int position){
             holder.textView.setText(names[position]);
-            holder.imageView.setImageDrawable(getResources().getDrawable(R.drawable.example_cv));
+            //holder.imageView.setImageDrawable(getResources().getDrawable(R.drawable.example_cv));
         }
         //构造方法
         public MediaAdapter(Context context, String[] names) {
