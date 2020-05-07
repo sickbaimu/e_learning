@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    tools:context=".activity.activity.Learn.TextChapter2">
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@drawable/shape_corner_white"
+        android:id="@+id/chapter_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:textColor="@color/DeepBlue"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="第5章 多媒体视频信号的获取和处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_1"
+            android:layout_margin="5dp"
+            android:text="知识点1 视频和动画的区别"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_2"
+            android:layout_margin="5dp"
+            android:text="知识点2 视频的分类——模拟视频"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_3"
+            android:layout_margin="5dp"
+            android:text="知识点3 视频的分类——数字视频"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_4"
+            android:layout_margin="5dp"
+            android:text="知识点4 数字视频的文件格式——AVI格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_5"
+            android:layout_margin="5dp"
+            android:text="知识点5 数字视频的文件格式——MOV格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_6"
+            android:layout_margin="5dp"
+            android:text="知识点6 数字视频的文件格式——MPG格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_7"
+            android:layout_margin="5dp"
+            android:text="知识点7 数字视频的文件格式——DAT格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_8"
+            android:layout_margin="5dp"
+            android:text="知识点8 数字视频的文件格式——RM格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_9"
+            android:layout_margin="5dp"
+            android:text="知识点9 数字视频的文件格式——ASF格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_5_10"
+            android:layout_margin="5dp"
+            android:text="知识点10 数字视频的文件格式——WV格式视频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

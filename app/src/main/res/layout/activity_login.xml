@@ -47,7 +47,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="师生一体  在线学习"
+            android:text="师生一体  移动学习"
             android:textColor="@color/White"/>
         <View
             android:layout_marginStart="55dp"
@@ -79,7 +79,7 @@
             <EditText
                 android:id="@+id/edit_username"
                 android:textSize="20sp"
-                android:text="admin"
+                android:text="zhangsan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="学号或教工号"/>
@@ -87,7 +87,7 @@
                 android:id="@+id/edit_pwd"
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
-                android:text="admin"
+                android:text="333"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="密码"/>

@@ -26,7 +26,6 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
     TextView tv_content,tv_chapter,tv_section;
     Button b_last_page,b_next_page,b_back;
     String chapter_id,section_order;
-    int chapter_size = -1;
     Button buttonNote;
     Date beginTime,endTime;
 
@@ -46,20 +45,15 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         b_back = findViewById(R.id.b_back);
         chapter_id = getIntent().getStringExtra("chapter_id");
         section_order = getIntent().getStringExtra("section_order");
+        tv_chapter.setText("第"+chapter_id+"章");
+        tv_section.setText("第"+section_order+"节");
         HttpUtil.sendHttpRequest("GetTextContent?" + "chapter_id=" + chapter_id+"&&section_order="+section_order+"&userID="+ ClientUser.getId(), new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        try{
-                            JSONObject jsonObject = new JSONObject(response);
-                            tv_chapter.setText(Pack.pack(jsonObject.getString("chapter_order"),jsonObject.getString("chapter_name"),"章"));
-                            tv_section.setText(Pack.pack(jsonObject.getString("section_order"),jsonObject.getString("section_name"),"节"));
-                            tv_content.setText(jsonObject.getString("content"));
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                        }
+                        tv_content.setText(response);
                     }
                 });
             }
@@ -70,17 +64,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
             }
         });
 
-        HttpUtil.sendHttpRequest("GetChapterSize?chapter_id=" + chapter_id, new HttpCallbackListener() {
-            @Override
-            public void onFinish(String response) {
-                chapter_size = Integer.valueOf(response);
-            }
 
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
         b_last_page.setOnClickListener(this);
         b_next_page.setOnClickListener(this);
         b_back.setOnClickListener(this);
@@ -91,7 +75,7 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
         Intent intent = new Intent(getApplicationContext(),TextLearnPage.class);
         switch (v.getId()){
             case R.id.b_last_page://上一页
-                if(Integer.valueOf(section_order)==1)
+                if(Integer.parseInt(section_order)==1)
                 {
                     ShowToast(getApplicationContext(),"已至章首，请返回目录。");
                     break;
@@ -102,7 +86,17 @@ public class TextLearnPage extends Activity implements View.OnClickListener{
                 finish();
                 break;
             case R.id.b_next_page://下一页
-                if(Integer.valueOf(section_order)==chapter_size)
+                int order = -1;
+                switch (chapter_id){
+                    case "1":order = 23;break;
+                    case "2":order = 15;break;
+                    case "3":order = 39;break;
+                    case "4":order = 38;break;
+                    case "5":order = 10;break;
+                    case "6":order = 22;break;
+                    default:break;
+                }
+                if(Integer.parseInt(section_order)==order)
                 {
                     ShowToast(getApplicationContext(),"已至章尾，请返回目录。");
                     break;

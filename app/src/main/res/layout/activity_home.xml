@@ -793,79 +793,7 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/module_exam"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/buttonOrderExam"
-                        android:textSize="22sp"
-                        android:background="@drawable/shape_corner_blue"
-                        android:textColor="@color/White"
-                        android:text="顺序练习"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/buttonRandomExam"
-                        android:textSize="22sp"
-                        android:background="@drawable/shape_corner_blue"
-                        android:textColor="@color/White"
-                        android:text="随机练习"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/buttonFinalExam"
-                        android:textSize="22sp"
-                        android:background="@drawable/shape_corner_blue"
-                        android:textColor="@color/White"
-                        android:text="考试模式"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/buttonMyScore"
-                        android:textSize="22sp"
-                        android:background="@drawable/shape_corner_blue"
-                        android:textColor="@color/White"
-                        android:text="我的成绩"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_margin="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/buttonCollection"
-                        android:textSize="22sp"
-                        android:background="@drawable/shape_corner_blue"
-                        android:textColor="@color/White"
-                        android:text="查看收藏"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
 
-            </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />

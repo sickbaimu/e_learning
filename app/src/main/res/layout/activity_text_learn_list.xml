@@ -74,38 +74,66 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-                <TextView
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="上一页"
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textColor="@color/DeepBlue"
-                    android:layout_gravity="center"
-                    android:text="第1页"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-                <TextView
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="下一页"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/c1"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第1章 多媒体技术概述"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/c2"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第2章 音频信号的获取与处理"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/c3"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第3章 数字图像处理技术"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/c4"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第4章 图像处理软件"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/c5"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第5章 多媒体视频信号的获取和处理"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <Button
+                        android:id="@+id/c6"
+                        android:textSize="16sp"
+                        android:layout_margin="15dp"
+                        android:textColor="@color/White"
+                        android:background="@drawable/shape_corner_blue"
+                        android:text="第6章 多媒体数据压缩"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
 </ScrollView>

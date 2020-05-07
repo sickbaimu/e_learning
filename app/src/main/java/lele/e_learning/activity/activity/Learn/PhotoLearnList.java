@@ -35,7 +35,8 @@ public class PhotoLearnList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_learn_list);
         tvRate = findViewById(R.id.tvRate);
-        tvRate.setText("你已经学习了"+getIntent().getStringExtra("rate"));        names = getIntent().getStringExtra("names").split("-");
+        tvRate.setText("你已经学习了"+getIntent().getStringExtra("rate"));
+        names = getIntent().getStringExtra("names").split("-");
         gridView = findViewById(R.id.grid_view);
         //配置适配器
         myAdapter = new MyAdapter(getApplicationContext(),names);

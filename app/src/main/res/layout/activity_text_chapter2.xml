@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    tools:context=".activity.activity.Learn.TextChapter2">
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@drawable/shape_corner_white"
+        android:id="@+id/chapter_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:textColor="@color/DeepBlue"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="第2章 音频信号的获取与处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_1"
+            android:layout_margin="5dp"
+            android:text="知识点1 声音的三要素"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_2"
+            android:layout_margin="5dp"
+            android:text="知识点2 声音的数字化"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_3"
+            android:layout_margin="5dp"
+            android:text="知识点3 数字化"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_4"
+            android:layout_margin="5dp"
+            android:text="知识点4 采样频率与量化精度"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_5"
+            android:layout_margin="5dp"
+            android:text="知识点5 采样频率"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_6"
+            android:layout_margin="5dp"
+            android:text="知识点6 量化精度"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_7"
+            android:layout_margin="5dp"
+            android:text="知识点7 编码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_8"
+            android:layout_margin="5dp"
+            android:text="知识点8 数据量与声音质量"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_9"
+            android:layout_margin="5dp"
+            android:text="知识点9 数字音频的获取方式"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_10"
+            android:layout_margin="5dp"
+            android:text="知识点10 数字音频的文件格式——WAV格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_11"
+            android:layout_margin="5dp"
+            android:text="知识点11 数字音频的文件格式——V0C格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_12"
+            android:layout_margin="5dp"
+            android:text="知识点12 数字音频的文件格式——MP3格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_13"
+            android:layout_margin="5dp"
+            android:text="知识点13 数字音频的文件格式——RA格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_14"
+            android:layout_margin="5dp"
+            android:text="知识点14 数字音频的文件格式——MIDI格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_2_15"
+            android:layout_margin="5dp"
+            android:text="知识点15 数字音频的文件格式——WMA格式音频文件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    tools:context=".activity.activity.Learn.TextChapter2">
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@drawable/shape_corner_white"
+        android:id="@+id/chapter_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:textColor="@color/DeepBlue"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="第6章 多媒体数据压缩"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_1"
+            android:layout_margin="5dp"
+            android:text="知识点1 多媒体数据压缩的必要性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_2"
+            android:layout_margin="5dp"
+            android:text="知识点2 多媒体数据压缩的可能性——感官生理局限性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_3"
+            android:layout_margin="5dp"
+            android:text="知识点3 多媒体数据压缩的可能性——多媒体数据的冗余"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_4"
+            android:layout_margin="5dp"
+            android:text="知识点4 多媒体数据压缩技术的衡量标准"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_5"
+            android:layout_margin="5dp"
+            android:text="知识点5 压缩方法分类——无损压缩"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_6"
+            android:layout_margin="5dp"
+            android:text="知识点6 压缩方法分类——有损压缩"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_7"
+            android:layout_margin="5dp"
+            android:text="知识点7 无损压缩的优势"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_8"
+            android:layout_margin="5dp"
+            android:text="知识点8 无损压缩的不足"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_9"
+            android:layout_margin="5dp"
+            android:text="知识点9 RLE编码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_10"
+            android:layout_margin="5dp"
+            android:text="知识点10 统计编码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_11"
+            android:layout_margin="5dp"
+            android:text="知识点11 统计编码实际例子"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_12"
+            android:layout_margin="5dp"
+            android:text="知识点12 预测编码的原理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_13"
+            android:layout_margin="5dp"
+            android:text="知识点13 预测编码的步骤"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_14"
+            android:layout_margin="5dp"
+            android:text="知识点14 预测编码算法"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_15"
+            android:layout_margin="5dp"
+            android:text="知识点15 变换编码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_16"
+            android:layout_margin="5dp"
+            android:text="知识点16 数字音频压缩标准"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_17"
+            android:layout_margin="5dp"
+            android:text="知识点17 数字图像压缩标准"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_18"
+            android:layout_margin="5dp"
+            android:text="知识点18 JPEG概述"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_19"
+            android:layout_margin="5dp"
+            android:text="知识点19 JPEG有损压缩算法的三种工作模式"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_20"
+            android:layout_margin="5dp"
+            android:text="知识点20 JPEG2000优点"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_21"
+            android:layout_margin="5dp"
+            android:text="知识点21 JPEG的压缩流程"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_6_22"
+            android:layout_margin="5dp"
+            android:text="知识点22 数字视频压缩标准"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

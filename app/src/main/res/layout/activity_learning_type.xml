@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradual_blue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/head"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="课程学习"
+            android:textColor="#ffffff"
+            android:textSize="40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_top"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_weight="4"
+            android:background="@drawable/shape_corner_white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:id="@+id/module_learn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="我的学习进度"
+                        android:textSize="25sp"
+                        android:textColor="@color/DeepBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvTextRate"
+                        android:text="文本阅读       15%"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvPhotoRate"
+                        android:text="经典图示       20%"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvMediaRate"
+                        android:text="视频资源       66%"
+                        android:textSize="14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/DeepBlue"/>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <ImageView
+                        android:id="@+id/img_text_learn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/ll_1"
+                        app:layout_constraintHorizontal_weight="0.3"
+                        android:src="@drawable/img_txt"
+                        android:padding="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:id="@+id/ll_1"
+                        android:src="@drawable/img_txt"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_weight="0.7"
+                        app:layout_constraintLeft_toRightOf="@id/img_text_learn"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" >
+                        <TextView
+                            android:text="文本阅读"
+                            android:textSize="25sp"
+                            android:textColor="@color/DeepBlue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tv_example_text_1"
+                            android:text="第1章 多媒体技术概述"
+                            android:lines="1"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tv_example_text_2"
+                            android:text="第2章 音频信号的获取与处理"
+                            android:lines="1"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tv_example_text_3"
+                            android:text="第3章 数字图像处理技术"
+                            android:lines="1"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/DeepBlue"/>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <LinearLayout
+                        android:id="@+id/ll_2"
+                        android:src="@drawable/img_txt"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_weight="0.7"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/img_img_learn"
+                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" >
+                        <TextView
+                            android:text="经典图示"
+                            android:textSize="25sp"
+                            android:textColor="@color/DeepBlue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题1"
+                            android:id="@+id/tv_example_img_1"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题2"
+                            android:textSize="14sp"
+                            android:id="@+id/tv_example_img_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题3"
+                            android:textSize="14sp"
+                            android:id="@+id/tv_example_img_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/img_img_learn"
+                        app:layout_constraintLeft_toRightOf="@id/ll_2"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_weight="0.3"
+                        android:src="@drawable/img_photo"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                </android.support.constraint.ConstraintLayout>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/DeepBlue"/>
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+                    <ImageView
+                        android:id="@+id/img_video_learn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/ll_3"
+                        app:layout_constraintHorizontal_weight="0.3"
+                        android:src="@drawable/img_video"
+                        android:padding="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                    <LinearLayout
+                        android:id="@+id/ll_3"
+                        android:src="@drawable/img_txt"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_weight="0.7"
+                        app:layout_constraintLeft_toRightOf="@id/img_video_learn"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:padding="15dp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" >
+                        <TextView
+                            android:text="视频资源"
+                            android:textSize="25sp"
+                            android:textColor="@color/DeepBlue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题1"
+                            android:id="@+id/tv_example_media_1"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题2"
+                            android:id="@+id/tv_example_media_2"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:text="标题3"
+                            android:id="@+id/tv_example_media_3"
+                            android:textSize="14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -25,8 +25,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.activity.teacher.TeacherRate"></activity>
-        <activity android:name=".activity.activity.teacher.TeacherQuestionList"></activity>
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter1" />
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter2" />
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter3" />
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter4" />
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter5" />
+        <activity android:name=".activity.activity.teacher.TeacherTextChapter6" />
+        <activity android:name=".activity.activity.Exam.ExamHome"></activity>
+        <activity android:name=".activity.activity.Learn.TextChapter1" />
+        <activity android:name=".activity.activity.Learn.TextChapter2" />
+        <activity android:name=".activity.activity.Learn.TextChapter3" />
+        <activity android:name=".activity.activity.Learn.TextChapter4" />
+        <activity android:name=".activity.activity.Learn.TextChapter5" />
+        <activity android:name=".activity.activity.Learn.TextChapter6" />
+        <activity android:name=".activity.activity.Learn.Mind" />
+        <activity android:name=".activity.activity.Learn.LearningType" />
+        <activity android:name=".activity.activity.Introduction" />
+        <activity android:name=".activity.activity.BBS.MainBBSPage" />
+        <activity android:name=".activity.activity.HomeV2" />
+        <activity android:name=".activity.activity.teacher.TeacherRate" />
+        <activity android:name=".activity.activity.teacher.TeacherQuestionList" />
         <activity android:name=".activity.activity.teacher.TeacherScore" />
         <activity android:name=".activity.activity.teacher.TeacherRank" />
         <activity android:name=".activity.activity.teacher.TeacherMBBS" />
@@ -42,7 +60,7 @@
         <activity
             android:name=".activity.activity.Learn.MediaLearnPage"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity android:name=".activity.activity.Learn.CheckNote" />
         <activity android:name=".activity.activity.Exam.MyScore" />
         <activity android:name=".activity.activity.Exam.ExamResult" />
@@ -55,35 +73,35 @@
         <activity android:name=".activity.activity.teacher.TeacherHome" />
         <activity
             android:name=".activity.activity.BBS.ChildBBSPage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Learn.PhotoLearnPage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Learn.PhotoLearnList"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Learn.TextLearnPage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Learn.TextLearnList"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Learn.MediaLearnList"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity android:name=".activity.activity.Vote.VoteList" />
         <activity
             android:name=".activity.activity.Vote.VotePage"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Home"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Register"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".activity.activity.Login"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

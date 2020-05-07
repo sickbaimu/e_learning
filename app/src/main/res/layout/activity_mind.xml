@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.activity.Learn.Mind">
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:gravity="top"
+            android:id="@+id/mind"
+            android:src="@drawable/mind"
+            android:layout_width="828dp"
+            android:layout_height="526dp"/>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_margin="30dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/shape_corner_blue"
+            android:text="X"
+            android:layout_weight="1"
+            android:id="@+id/x"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_margin="30dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/shape_corner_blue"
+            android:text="Y"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

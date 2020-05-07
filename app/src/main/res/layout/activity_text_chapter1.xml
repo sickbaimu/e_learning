@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    tools:context=".activity.activity.Learn.TextChapter1">
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@drawable/shape_corner_white"
+        android:id="@+id/chapter_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:textColor="@color/DeepBlue"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="第1章  多媒体技术概述"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_1"
+            android:layout_margin="5dp"
+            android:text="知识点1 媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_2"
+            android:layout_margin="5dp"
+            android:text="知识点2 媒体的分类"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_3"
+            android:layout_margin="5dp"
+            android:text="知识点3 感觉媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_4"
+            android:layout_margin="5dp"
+            android:text="知识点4 表示媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_5"
+            android:layout_margin="5dp"
+            android:text="知识点5 显示媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_6"
+            android:layout_margin="5dp"
+            android:text="知识点6 存储媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_7"
+            android:layout_margin="5dp"
+            android:text="知识点7 传输媒体"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_8"
+            android:layout_margin="5dp"
+            android:text="知识点8 多媒体技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_9"
+            android:layout_margin="5dp"
+            android:text="知识点9 多媒体技术特点——多样性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_10"
+            android:layout_margin="5dp"
+            android:text="知识点10 多媒体技术特点——交互性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_11"
+            android:layout_margin="5dp"
+            android:text="知识点11 多媒体技术特点——集成性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_12"
+            android:layout_margin="5dp"
+            android:text="知识点12 多媒体技术特点——实时性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_13"
+            android:layout_margin="5dp"
+            android:text="知识点13 多媒体技术特点——非线性"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_14"
+            android:layout_margin="5dp"
+            android:text="知识点14 主要研究的内容——多媒体数据的压缩编码与解压缩技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_15"
+            android:layout_margin="5dp"
+            android:text="知识点15 主要研究的内容——多媒体数据存储技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_16"
+            android:layout_margin="5dp"
+            android:text="知识点16 主要研究的内容——多媒体数据库技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_17"
+            android:layout_margin="5dp"
+            android:text="知识点17 主要研究的内容——多媒体网络与通信技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_18"
+            android:layout_margin="5dp"
+            android:text="知识点18 主要研究的内容——多媒体信息检索技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_19"
+            android:layout_margin="5dp"
+            android:text="知识点19 主要研究的内容——虚拟现实技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_20"
+            android:layout_margin="5dp"
+            android:text="知识点20 多媒体应用领域——教育、培训"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_21"
+            android:layout_margin="5dp"
+            android:text="知识点21 多媒体应用领域——多媒体电子出版物"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_22"
+            android:layout_margin="5dp"
+            android:text="知识点22 多媒体应用领域——商业与咨询"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_1_23"
+            android:layout_margin="5dp"
+            android:text="知识点23 多媒体应用领域——多媒体在网络通信中的应用"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

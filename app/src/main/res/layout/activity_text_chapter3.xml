@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradual_blue"
+    tools:context=".activity.activity.Learn.TextChapter3">
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@drawable/shape_corner_white"
+        android:id="@+id/chapter_1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="25sp"
+            android:textColor="@color/DeepBlue"
+            android:gravity="center"
+            android:layout_margin="15dp"
+            android:text="第3章 数字图像处理技术"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mind"
+                android:adjustViewBounds="true"
+                android:src="@drawable/mind_3"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"/>
+        </HorizontalScrollView>
+        <TextView
+            android:id="@+id/s_3_1"
+            android:layout_margin="5dp"
+            android:text="知识点1 图像与图形"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/s_3_2"
+            android:layout_margin="5dp"
+            android:text="知识点2 构成原理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_3"
+            android:layout_margin="5dp"
+            android:text="知识点3 数据量"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_4"
+            android:layout_margin="5dp"
+            android:text="知识点4 放大与缩小"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_5"
+            android:layout_margin="5dp"
+            android:text="知识点5 表现力"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_6"
+            android:layout_margin="5dp"
+            android:text="知识点6 空间采样"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_7"
+            android:layout_margin="5dp"
+            android:text="知识点7 图像大小"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_8"
+            android:layout_margin="5dp"
+            android:text="知识点8 图像分辨率"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_9"
+            android:layout_margin="5dp"
+            android:text="知识点9 颜色景深"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_10"
+            android:layout_margin="5dp"
+            android:text="知识点10 色彩空间"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_11"
+            android:layout_margin="5dp"
+            android:text="知识点11 RGB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_12"
+            android:layout_margin="5dp"
+            android:text="知识点12 CMYK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_13"
+            android:layout_margin="5dp"
+            android:text="知识点13 HSB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_14"
+            android:layout_margin="5dp"
+            android:text="知识点14 颜色深度"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_15"
+            android:layout_margin="5dp"
+            android:text="知识点15 位深度"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_16"
+            android:layout_margin="5dp"
+            android:text="知识点16 索引图像"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_17"
+            android:layout_margin="5dp"
+            android:text="知识点17 真彩色图像"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_18"
+            android:layout_margin="5dp"
+            android:text="知识点18 数据组织"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_19"
+            android:layout_margin="5dp"
+            android:text="知识点19 图像文件大小"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_20"
+            android:layout_margin="5dp"
+            android:text="知识点20 文件格式"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_21"
+            android:layout_margin="5dp"
+            android:text="知识点21 图像处理软件"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_22"
+            android:layout_margin="5dp"
+            android:text="知识点22 简介"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_23"
+            android:layout_margin="5dp"
+            android:text="知识点23 典型滤镜"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_24"
+            android:layout_margin="5dp"
+            android:text="知识点24 点处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_25"
+            android:layout_margin="5dp"
+            android:text="知识点25 亮度调整"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_26"
+            android:layout_margin="5dp"
+            android:text="知识点26 对比度调整"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_27"
+            android:layout_margin="5dp"
+            android:text="知识点27 亮度反置处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_28"
+            android:layout_margin="5dp"
+            android:text="知识点28 组处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_29"
+            android:layout_margin="5dp"
+            android:text="知识点29 处理边缘"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_30"
+            android:layout_margin="5dp"
+            android:text="知识点30 图像锐化"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_31"
+            android:layout_margin="5dp"
+            android:text="知识点31 图像柔化"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_32"
+            android:layout_margin="5dp"
+            android:text="知识点32 几何处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_33"
+            android:layout_margin="5dp"
+            android:text="知识点33 旋转"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_34"
+            android:layout_margin="5dp"
+            android:text="知识点34 镜像"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_35"
+            android:layout_margin="5dp"
+            android:text="知识点35 平移"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_36"
+            android:layout_margin="5dp"
+            android:text="知识点36 帧处理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_37"
+            android:layout_margin="5dp"
+            android:text="知识点37 逻辑与"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_38"
+            android:layout_margin="5dp"
+            android:text="知识点38 逻辑或"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/s_3_39"
+            android:layout_margin="5dp"
+            android:text="知识点39 平均值"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

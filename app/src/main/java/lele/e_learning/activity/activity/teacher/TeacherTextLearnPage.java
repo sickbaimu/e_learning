@@ -44,23 +44,17 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
 
         chapter_id = getIntent().getStringExtra("chapter_id");
         section_order = getIntent().getStringExtra("section_order");
+        tv_chapter.setText("第"+chapter_id+"章");
+        tv_section.setText("第"+section_order+"节");
+
         HttpUtil.sendHttpRequest("GetTextContent?" + "chapter_id=" + chapter_id+"&&section_order="+section_order, new HttpCallbackListener() {
             @Override
             public void onFinish(final String response) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        try{
-                            JSONObject jsonObject = new JSONObject(response);
-                            tv_chapter.setText(Pack.pack(jsonObject.getString("chapter_order"),jsonObject.getString("chapter_name"),"章"));
-                            tv_section.setText(Pack.pack(jsonObject.getString("section_order"),jsonObject.getString("section_name"),"节"));
-                            tv_content.setText(jsonObject.getString("content"));
-                            name = jsonObject.getString("section_name");
-                            content = jsonObject.getString("content");
-                            id = jsonObject.getString("flag");
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                        }
+                        content = response;
+                        tv_content.setText(response);
                     }
                 });
             }
@@ -71,17 +65,7 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
             }
         });
 
-        HttpUtil.sendHttpRequest("GetChapterSize?chapter_id=" + chapter_id, new HttpCallbackListener() {
-            @Override
-            public void onFinish(String response) {
-                chapter_size = Integer.valueOf(response);
-            }
 
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
         b_last_page.setOnClickListener(this);
         b_next_page.setOnClickListener(this);
         b_back.setOnClickListener(this);
@@ -93,7 +77,7 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
         Intent intent = new Intent(getApplicationContext(), TextLearnPage.class);
         switch (v.getId()){
             case R.id.b_last_page://上一页
-                if(Integer.valueOf(section_order)==1)
+                if(Integer.parseInt(section_order)==1)
                 {
                     ShowToast(getApplicationContext(),"已至章首，请返回目录。");
                     break;
@@ -104,7 +88,17 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
                 finish();
                 break;
             case R.id.b_next_page://下一页
-                if(Integer.valueOf(section_order)==chapter_size)
+                int order = -1;
+                switch (chapter_id){
+                    case "1":order = 23;break;
+                    case "2":order = 15;break;
+                    case "3":order = 39;break;
+                    case "4":order = 38;break;
+                    case "5":order = 10;break;
+                    case "6":order = 22;break;
+                    default:break;
+                }
+                if(Integer.parseInt(section_order)==order)
                 {
                     ShowToast(getApplicationContext(),"已至章尾，请返回目录。");
                     break;
@@ -123,15 +117,12 @@ public class TeacherTextLearnPage extends AppCompatActivity implements View.OnCl
             case R.id.buttonEdit:
                 TextFragment myDialogFragment = new TextFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("id",id);
                 bundle.putString("chapterID", chapter_id);
                 bundle.putString("sectionOrder",section_order);
-                bundle.putString("name",name);
                 bundle.putString("content",content);
                 myDialogFragment.setArguments(bundle);
                 myDialogFragment.show(getFragmentManager(), "Dialog");
                 break;
-            case R.id.buttonDelete:break;
             default:break;
         }
     }

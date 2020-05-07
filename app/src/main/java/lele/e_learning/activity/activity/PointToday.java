@@ -1,7 +1,10 @@
 package lele.e_learning.activity.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import lele.e_learning.R;
@@ -12,6 +15,8 @@ import lele.e_learning.activity.tools.HttpUtil;
 public class PointToday extends AppCompatActivity {
 
     TextView tvPointLogin,tvPointCollection,tvPointBBS,tvPointTP,tvPointTextTime,tvPointMediaTime,tvPointAnswer,tvPointAnswerTime;
+    Button btn_checkRank;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +29,7 @@ public class PointToday extends AppCompatActivity {
         tvPointMediaTime = findViewById(R.id.tvPointMediaTime);
         tvPointAnswer = findViewById(R.id.tvPointAnswer);
         tvPointAnswerTime = findViewById(R.id.tvPointAnswerTime);
-
+        btn_checkRank = findViewById(R.id.btn_checkRank);
         HttpUtil.sendHttpRequest("GetPointToday?userID=" + ClientUser.getId(), new HttpCallbackListener() {
             @Override
             public void onFinish(String response) {
@@ -41,6 +46,12 @@ public class PointToday extends AppCompatActivity {
             @Override
             public void onError(Exception e) {
 
+            }
+        });
+        btn_checkRank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),PointRank.class));
             }
         });
     }
